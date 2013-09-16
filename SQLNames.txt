@@ -1,0 +1,6 @@
+//Tabela Memb___id
+"MEMB_INFO"		//MEMB_INFO
+"memb___id"		//memb___id    
+"Vip"			///VIP
+"Creditos"		//creditos
+"Moedas"		//moedas
