@@ -29,11 +29,8 @@ GameID1,GameID2,GameID3,GameID4,
 GameID5,AccountCharacter, ID, //Account Character
 //Memb_Info
 Memb_Info,Memb___Id,Vip,Options,
-memb_name,sno_numb,fpas_ques,fpas_answ,mail_addr,memb_cash
 //Vip
 Viplevel,VipCreditos,FreeVip,VipExtra,VipAccount,VipTable,
-//VipAdd
-VipATable,VipAAccount,VipAStat,VipAAdd,
 //Character
 Character,inventory,shopitem,nome,magiclists,
 //???

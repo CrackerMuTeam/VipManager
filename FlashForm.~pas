@@ -4610,11 +4610,12 @@ begin
   //character2
   magiclists:=s[35];
   //Vip
-  VipTable:=s[36];VipAccount:=s[37];Viplevel:=s[38];
-  VipCreditos:=s[39];FreeVip:=s[40]; VipExtra:=s[41];
-
-  //Memb_Info2
-  memb_name,sno_numb,fpas_ques,fpas_answ,mail_addr,memb_cash
+  VipTable:=s[36];
+  VipAccount:=s[37];
+  Viplevel:=s[38];
+  VipCreditos:=s[39];
+  FreeVip:=s[40];
+  VipExtra:=s[41];
   try //MuOnline
     Reg := TRegistry.Create;
     Reg.RootKey := HKEY_LOCAL_MACHINE;

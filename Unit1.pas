@@ -4,76 +4,139 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Buttons, ADODB,dec, DB,unit2, Grids, DBGrids, DBCtrls,
-   ExtCtrls, ComCtrls;
+  Dialogs, StdCtrls, ExtCtrls, Menus, RzGroupBar, pngextra, Grids, Mask,
+  XPMan, DB, ADODB,dec;
 
 type
-  Tform1 = class(TForm)
-    GroupBox1: TGroupBox;
+  TForm1 = class(TForm)
+    RzGroupBar1: TRzGroupBar;
+    RzGroup1: TRzGroup;
+    MainMenu1: TMainMenu;
+    VipManager1: TMenuItem;
+    RzGroup2: TRzGroup;
+    Panel1: TPanel;
+    Panel3: TPanel;
+    Panel4: TPanel;
+    Panel5: TPanel;
+    Panel6: TPanel;
+    Panel2: TPanel;
+    ComboBox1: TComboBox;
     Label1: TLabel;
-    BitBtn1: TBitBtn;
-    BitBtn2: TBitBtn;
-    GroupBox3: TGroupBox;
-    BitBtn4: TBitBtn;
+    PNGButton1: TPNGButton;
+    PNGButton2: TPNGButton;
+    GroupBox1: TGroupBox;
     GroupBox2: TGroupBox;
-    GroupBox4: TGroupBox;
-    BitBtn5: TBitBtn;
-    Edit2: TEdit;
-    Label8: TLabel;
-    Label7: TLabel;
+    RzGroup3: TRzGroup;
+    Label2: TLabel;
+    Label3: TLabel;
+    PNGButton4: TPNGButton;
+    PNGButton5: TPNGButton;
+    Label4: TLabel;
     Edit1: TEdit;
-    BitBtn3: TBitBtn;
     Label5: TLabel;
     Label6: TLabel;
-    GroupBox5: TGroupBox;
+    Label7: TLabel;
+    Panel8: TPanel;
+    ComboBox2: TComboBox;
+    CheckBox1: TCheckBox;
+    Label8: TLabel;
+    Memo1: TMemo;
     Label9: TLabel;
     Label10: TLabel;
     Label11: TLabel;
     Label12: TLabel;
-    BitBtn6: TBitBtn;
-    Edit3: TEdit;
-    Edit4: TEdit;
-    BitBtn7: TBitBtn;
-    muQuery: TADOQuery;
-    muUpdate: TADOCommand;
-    BitBtn8: TBitBtn;
-    BitBtn9: TBitBtn;
-    ComboBox1: TComboBox;
+    Label13: TLabel;
+    Label14: TLabel;
+    Memo2: TMemo;
+    Label15: TLabel;
+    Label16: TLabel;
+    Label17: TLabel;
+    Label18: TLabel;
     StringGrid1: TStringGrid;
+    PNGButton3: TPNGButton;
+    PNGButton6: TPNGButton;
+    GroupBox3: TGroupBox;
+    Label19: TLabel;
+    Edit2: TEdit;
+    Label20: TLabel;
+    ComboBox3: TComboBox;
+    Label21: TLabel;
+    ComboBox4: TComboBox;
     Button1: TButton;
+    CheckBox2: TCheckBox;
+    GroupBox4: TGroupBox;
+    Label22: TLabel;
+    Label24: TLabel;
+    Edit3: TEdit;
+    ComboBox6: TComboBox;
     Button2: TButton;
+    CheckBox3: TCheckBox;
+    GroupBox5: TGroupBox;
+    Label23: TLabel;
+    Label25: TLabel;
+    Edit4: TEdit;
+    ComboBox5: TComboBox;
     Button3: TButton;
-    StatusBar1: TStatusBar;
+    CheckBox4: TCheckBox;
+    GroupBox6: TGroupBox;
+    CheckBox5: TCheckBox;
+    Label26: TLabel;
+    Edit5: TEdit;
+    CheckBox6: TCheckBox;
+    ComboBox7: TComboBox;
+    Label27: TLabel;
+    GroupBox7: TGroupBox;
+    CheckBox7: TCheckBox;
+    Label29: TLabel;
+    Edit6: TEdit;
+    Label30: TLabel;
+    ComboBox9: TComboBox;
+    CheckBox8: TCheckBox;
+    GroupBox8: TGroupBox;
+    CheckBox9: TCheckBox;
+    Label31: TLabel;
+    ComboBox10: TComboBox;
+    Edit7: TEdit;
+    Label32: TLabel;
+    ComboBox11: TComboBox;
+    Label33: TLabel;
+    CheckBox10: TCheckBox;
+    GroupBox9: TGroupBox;
+    Label34: TLabel;
+    Memo3: TMemo;
+    Label35: TLabel;
+    MaskEdit1: TMaskEdit;
+    Label36: TLabel;
+    Edit8: TEdit;
+    Label37: TLabel;
+    Label38: TLabel;
+    Edit9: TEdit;
+    Label39: TLabel;
     Button4: TButton;
-    Label2: TLabel;
-    procedure Button4Click(Sender: TObject);
-    procedure Edit3KeyPress(Sender: TObject; var Key: Char);
-    procedure Edit4KeyPress(Sender: TObject; var Key: Char);
-    procedure Edit2KeyPress(Sender: TObject; var Key: Char);
-    procedure Edit1KeyPress(Sender: TObject; var Key: Char);
-    procedure Button3Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
-    procedure Button1Click(Sender: TObject);
-
-    procedure StringGrid1SelectCell(Sender: TObject; ACol, ARow: Integer;
-      var CanSelect: Boolean);
-    procedure BitBtn4Click(Sender: TObject);
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure BitBtn9Click(Sender: TObject);
-    procedure ComboBox1Change(Sender: TObject);
-    procedure BitBtn7Click(Sender: TObject);
-    procedure BitBtn6Click(Sender: TObject);
-    procedure BitBtn5Click(Sender: TObject);
-    procedure BitBtn3Click(Sender: TObject);
-    procedure BitBtn2Click(Sender: TObject);
-    procedure BitBtn1Click(Sender: TObject);
-    procedure BitBtn8Click(Sender: TObject);
-   // procedure editlock;
-    //procedure editunlock;
-    procedure lista;
-    procedure lervip;
-    procedure iniciar;
-    procedure vipmostrar;
+    Label40: TLabel;
+    Label41: TLabel;
+    Label42: TLabel;
+    Label43: TLabel;
+    Label44: TLabel;
+    Label45: TLabel;
+    ComboBox8: TComboBox;
+    Label28: TLabel;
+    XPManifest1: TXPManifest;
+    Button5: TButton;
+    ADOCommand1: TADOCommand;
+    ADOQuery1: TADOQuery;
+    PNGButton7: TPNGButton;
+    Label46: TLabel;
+    procedure VipInfo(s:string);
+    procedure VipEdit(s:string);
+    procedure VipView;
+    procedure Iniciar;
+    procedure RzGroup1Items0Click(Sender: TObject);
+    procedure RzGroup1Items1Click(Sender: TObject);
+    procedure RzGroup1Items2Click(Sender: TObject);
+    procedure RzGroup1Items3Click(Sender: TObject);
+    procedure RzGroup2Items0Click(Sender: TObject);
+    procedure RzGroup2Items1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -81,339 +144,208 @@ type
   end;
 
 var
-  form1: Tform1;
-  ordem:string;
+  Form1: TForm1;
+
 implementation
 
-uses Unit3;
-
 {$R *.dfm}
-
-procedure Tform1.vipmostrar;
-var
-i:integer;
-begin
-  ComboBox1.Items.clear;
-  muquery.SQL.Clear;
-  muquery.SQL.Add('select '+memb___id+' from '+MEMB_INFO+' where '+vip+'>''0''');
-  muquery.Open;
-  for i:=0 to muquery.RecordCount-1 do begin
-      ComboBox1.Items.Add(muquery.Fields[0].asstring);
-      muquery.Next;
-    end;
-  muquery.Close;
- // combobox1.ItemIndex:=1;
- // lervip;
-end;
-
-
-
-procedure Tform1.BitBtn1Click(Sender: TObject);
-begin
-  tipo:='criar';
-  form2.caption:=bitbtn1.caption;
-  form2.button1.Caption:=bitbtn1.caption;
-  form2.iniciar;
-  form2.show;
-  form1.enabled:=false;
-end;
-
-procedure Tform1.BitBtn2Click(Sender: TObject);
-begin
-  if combobox1.Text<>'' then
-    begin
-      if application.MessageBox('Voce tem certeza que deseja tirar o vip dessa account?','CMT-VMAT Vip Manager',mb_yesno+mb_iconwarning)=idno then exit;
-      muupdate.CommandText:=('Update '+MEMB_INFO+' set '+creditos+'=''0'', '+vip+'=''0'' where '+memb___id+'='''+ComboBox1.text+'''');
-      muupdate.execute;
-      vipmostrar;
-      lista;
-      combobox1.text:='';
-    end
-      else application.MessageBox(pchar('Nenhuma account foi selecionada para tirar o vip'),'Erro!',mb_ok+mb_iconerror);
-
-end;
-
-procedure Tform1.BitBtn3Click(Sender: TObject);
-var x:integer;
-y:integer;
-z:integer;
-begin
-  if combobox1.Text<>'' then
-    begin
-      x:=strtoint(label6.caption);
-      y:=strtoint(edit1.text);
-      z:=x+y;
-      muupdate.CommandText:=('Update '+MEMB_INFO+' set '+creditos+'='''+inttostr(z)+''' where '+memb___id+'='''+ComboBox1.text+'''');
-      muupdate.execute;
-      label6.caption:=inttostr(z);
-      lista;
-    end;
-end;
-
-procedure Tform1.BitBtn4Click(Sender: TObject);
-begin
-lista;
-end;
-
-procedure Tform1.BitBtn5Click(Sender: TObject);
-var x:integer;
-y:integer;
-z:integer;
-begin
-  if combobox1.Text<>'' then
-    begin
-      x:=strtoint(label6.caption);
-      y:=strtoint(edit2.text);
-      if x>y then z:=x-y
-        else z:=0;
-      muupdate.CommandText:=('Update '+MEMB_INFO+' set '+creditos+'='''+inttostr(z)+''' where '+memb___id+'='''+ComboBox1.text+'''');
-      muupdate.execute;
-      label6.caption:=inttostr(z);
-      lista;
-    end;
-end;
-
-procedure Tform1.BitBtn6Click(Sender: TObject);
-var x:integer;
-y:integer;
-z:integer;
-begin
-  x:=strtoint(label12.caption);
-  y:=strtoint(edit3.text);
-  if x>y then z:=x-y
-    else z:=0;
-  muupdate.CommandText:=('Update '+MEMB_INFO+' set '+moedas+'='''+inttostr(z)+''' where '+memb___id+'='''+ComboBox1.text+'''');
-  muupdate.execute;
-  label12.caption:=inttostr(z);
-  lista;
-end;
-
-procedure Tform1.BitBtn7Click(Sender: TObject);
-var x:integer;
-y:integer;
-z:integer;
-begin
-  x:=strtoint(label12.caption);
-  y:=strtoint(edit4.text);
-  z:=x+y;
-  muupdate.CommandText:=('Update '+MEMB_INFO+' set '+moedas+'='''+inttostr(z)+''' where '+memb___id+'='''+ComboBox1.text+'''');
-  muupdate.execute;
-  label12.caption:=inttostr(z);
-  lista;
-end;
-
-procedure Tform1.BitBtn8Click(Sender: TObject);
-begin
-vipmostrar;
-end;
-
-procedure Tform1.BitBtn9Click(Sender: TObject);
-begin
-  if combobox1.Text<>'' then
-    begin
-      tipo:='editar';
-      form2.button1.Caption:=bitbtn9.caption;
-      accountsave:=combobox1.text;
-      form2.caption:=bitbtn9.caption;
-      form2.iniciar;
-      form2.show;
-      form1.enabled:=false;
-    end
-      else application.MessageBox(pchar('Nenhuma account foi selecionada para editar'),'Erro!',mb_ok+mb_iconerror);
-end;
-
-procedure Tform1.Button1Click(Sender: TObject);
-begin
-ordem:=memb___id;
-lista;
-end;
-
-procedure Tform1.Button2Click(Sender: TObject);
-begin
-ordem:=creditos;
-lista;
-end;
-
-procedure Tform1.Button3Click(Sender: TObject);
-begin
-ordem:=moedas;
-lista;
-end;
-
-procedure Tform1.Button4Click(Sender: TObject);
-begin
-form3.show;
-
-end;
-
-procedure Tform1.lervip;
-begin
-  muquery.SQL.Clear;
-  if moedas=creditos then   muquery.SQL.Add('select '+creditos+' from '+MEMB_INFO+' where '+memb___id+'='''+ComboBox1.text+'''')
-    else muquery.SQL.Add('select '+creditos+','+moedas+' from '+MEMB_INFO+' where '+memb___id+'='''+ComboBox1.text+'''');
-
-  muquery.Open;
-  label6.caption:=muquery.Fields[0].AsString;
-  if moedas<>creditos then label12.caption:=muquery.Fields[1].AsString;
-  muquery.Close;
-end;
-
-procedure Tform1.ComboBox1Change(Sender: TObject);
-begin
-  lervip;
-end;
-procedure Tform1.Edit1KeyPress(Sender: TObject; var Key: Char);
-begin
-if not(key in ['0'..'9',#8,#13]) then
-key := #0;
-end;
-
-procedure Tform1.Edit2KeyPress(Sender: TObject; var Key: Char);
-begin
-if not(key in ['0'..'9',#8,#13]) then
-key := #0;
-end;
-
-procedure Tform1.Edit3KeyPress(Sender: TObject; var Key: Char);
-begin
-if not(key in ['0'..'9',#8,#13]) then
-key := #0;
-end;
-
-procedure Tform1.Edit4KeyPress(Sender: TObject; var Key: Char);
-begin
-if not(key in ['0'..'9',#8,#13]) then
-key := #0;
-end;
-
-
-procedure Tform1.FormClose(Sender: TObject; var Action: TCloseAction);
-begin
-  application.terminate;
-end;
-
-procedure Tform1.iniciar;
-var
-  i:byte;
-  filename : string;
-  f : textfile;
-  ch : char;
-  esc: boolean;
-  s:array[1..20] of string;
-  g:string;
-begin
-  muquery.connectionstring:='Provider=MSDASQL.1;Password='+memupwd+';Persist Security Info=True;User ID='+memuid+';Data Source='+memudsn+';Initial Catalog='+mecatalog;
-  muupdate.ConnectionString:=muquery.connectionstring;
-
-  filename:=ExtractFilePath(Application.ExeName)+'SQLNames.txt';
-  assignfile(F,filename);
-  reset(F);
-  i:=0;
-  esc:=false;
-  while not eof(F) do
-    begin
-      read(F,ch);
-      Case ch of
-        '"'  :  begin
-                  if esc=false then esc:=true
-                    else
-                      begin
-                        esc:=false;
-                        inc(i);
-                        s[i]:=g;
-                        g:='';
-                      end;
-                end
-         else begin
-                if esc=true then
-                  begin
-                    g:=g+ch;
-                  end;
-               end;
-      end;
-    end;
-  closefile(F);
-
-  //Memb___id
-  memb_info:=s[1];
-  memb___id:=s[2];
-  vip:=s[3];
-  creditos:=s[4];
-  moedas:=s[5];
-  if (moedas='') or (moedas=creditos) then
-    begin
-      for I := 0 to groupbox5.ControlCount -1 do
-        groupbox5.Controls[i].visible:=false;
-      groupbox5.Enabled:=false;
-      form2.Edit2.visible:=false;
-      form2.label3.caption:='Moedas desativadas';
-      label2.Visible:=true;
-      moedas:=creditos;
-      button3.visible:=false;
-      stringgrid1.ColCount:=2;
-    end;
-  ordem:=creditos;
-  vipmostrar;
-  lista;
-
-
-
-
-  form1.update;
-end;
-
-procedure tform1.lista;
+procedure Tform1.VipInfo(s:string);
 var i:integer;
 begin
-  muquery.SQL.Clear;
-  if moedas=creditos then  muquery.SQL.Add('select '+creditos+','+memb___id+' from '+MEMB_INFO+' where '+vip+'>''0'' order by '+ordem+' asc ')
-    else muquery.SQL.Add('select '+creditos+','+memb___id+','+moedas+' from '+MEMB_INFO+' where '+vip+'>''0'' order by '+ordem+' asc ');
-  muquery.Open;
-  stringgrid1.rowcount:=muquery.recordcount+1 ;
-  for i := 0 to muquery.RecordCount - 1 do
+  if s<>'' then
     begin
-      //aqui vai add na stringgrid ou db grid
-      stringgrid1.cells[0,i+1]:=muquery.fields[1].asstring;
-      stringgrid1.cells[1,i+1]:=muquery.fields[0].asstring;
-      if moedas<>creditos then
-        stringgrid1.cells[2,i+1]:=muquery.fields[2].asstring;
-      muquery.next;
-    end;
-  muquery.Close;
-  if stringgrid1.RowCount=1 then
-    begin
-      stringgrid1.FixedRows:=0;
-      stringgrid1.RowCount:=0;
-      button1.Visible:=false;
-      button2.Visible:=false;
-      button3.Visible:=false;
-      stringgrid1.cells[0,0]:='';
-      stringgrid1.cells[1,0]:='';
-      if moedas<>creditos then
-        stringgrid1.cells[2,0]:='';
+      adoquery1.SQL.Clear;
+      adoquery1.SQL.Add('Select '++','++','++','++' from '+memb_info+' where '+memb___id+'='''+s+'''');
+      adoquery1.Open
+      combobox2.ItemIndex:=adoquery1.Fields[0].AsInteger;
+      label4.Caption:=adoquery1.Fields[1].AsString;
+      edit1.Text:=adoquery1.Fields[1].AsString;
+      if adoquery1.Fields[2].AsInteger=1 then checkbox1.Checked:=true
+        else checkbox1.Checked:=false;
+      memo1.Lines.add(adoquery1.Fields[3].AsString);
+      label7.Caption:=s;
+      adoquery1.Close;
     end
-      else
-        begin
-          stringgrid1.FixedRows:=1;
-          stringgrid1.cells[0,0]:='Account';
-          stringgrid1.cells[1,0]:='Creditos';
-          if moedas<>creditos then
-            stringgrid1.cells[2,0]:='Moedas';
-          button1.Visible:=true;
-          button2.Visible:=true;
-          if moedas<>creditos then button3.Visible:=true;
-        end;
-  
+      else application.MessageBox(pchar('Selecione uma account para Editar!'),pchar('CMT Vip Manager'),MB_ICONERROR+MB_OK);
 end;
 
-
-procedure Tform1.StringGrid1SelectCell(Sender: TObject; ACol, ARow: Integer;
-  var CanSelect: Boolean);
+procedure Tform1.VipEdit(s:string);
+var i:integer;
 begin
-   combobox1.text:=stringgrid1.Cells[0,arow];
-   lervip;
+  if s<>'' then
+    begin
+      adoquery1.SQL.Clear;
+      adoquery1.SQL.Add('Select '+VipLevel+','+VipCreditos+','+FreeVip+','+VipExtra+' from '+VipTable+' where '+VipAccount+'='''+s+'''');
+      adoquery1.Open
+      combobox2.ItemIndex:=adoquery1.Fields[0].AsInteger;
+      label4.Caption:=adoquery1.Fields[1].AsString;
+      edit1.Text:=adoquery1.Fields[1].AsString;
+      if adoquery1.Fields[2].AsInteger=1 then checkbox1.Checked:=true
+        else checkbox1.Checked:=false;
+      memo1.Lines.add(adoquery1.Fields[3].AsString);
+      label7.Caption:=s;
+      adoquery1.Close;
+    end
+      else application.MessageBox(pchar('Selecione uma account para Editar!'),pchar('CMT Vip Manager'),MB_ICONERROR+MB_OK);
+
 end;
 
+procedure TForm1.VipView;
+var i:integer
+begin
+  combobox1.Items.Clear;
+  adoquery1.SQL.Clear;
+  adoquery1.SQL.Add('Select '+VipAccount+' from '+VipTable+' where '+viplevel+'>=1');
+  adoquery1.open;
+  for i:=0 to adoquery1.RecordCount-1 do
+    begin
+      combobox1.Items.add(adoquery1.Fields[0].AsString);
+      adoquery1.next;
+    end;
+  adoquery1.close;
+  combobox1.ItemIndex:=0;
+end;
 
+procedure TForm1.iniciar;
+begin
+  adoquery1.ConnectionString:='Provider=MSDASQL.1;Password='+memupwd+';Persist Security Info=True;User ID='+memuid+';Data Source='+memudsn+';Initial Catalog='+mecatalog;
+  adocommand1.ConnectionString:='Provider=MSDASQL.1;Password='+memupwd+';Persist Security Info=True;User ID='+memuid+';Data Source='+memudsn+';Initial Catalog='+mecatalog;
+  adoquery1.SQL.Clear;
+  adoquery1.SQL.Add('select * from dbo.sysobjects where id = object_id(N''[dbo].['+viptable+']'') and OBJECTPROPERTY(id, N''IsUserTable'') = 1');
+  adoquery1.Open;
+  if adoquery1.Bof and adoquery1.Eof then begin
+    if application.MessageBox(pchar('Naum foi achado a tabela '+viptable+'! Voce deseja criar uma nova tabela?'),pchar('Vip Manager'),mb_yesno+mb_iconwarning)=idno then exit;
+    adocommand1.CommandText:='CREATE TABLE [dbo].['+viptable+'] (' +
+                             '['+VipAccount+'] [varchar] (10) NOT NULL ,' +
+                             '['+Viplevel+'] [tinyint]  NOT NULL ,' +
+                             '['+VipCreditos+'] [int]  NOT NULL ,' +
+                             '['+FreeVip+'] [tinyint]  NOT NULL ,' +
+                             '['+VipExtra+'] [varchar] (100) NULL ' +
+                             ') ON [PRIMARY]';
+    adocommand1.Execute;
+  end;
+  adoquery1.Close;
+  VipView;
+end;
+
+procedure TForm1.RzGroup1Items0Click(Sender: TObject);
+var j,i:integer;
+begin
+  panel1.Visible:=true;
+  panel2.Visible:=false;
+  panel3.Visible:=false;
+  panel4.Visible:=false;
+  panel5.Visible:=false;
+  panel6.Visible:=false;
+  (sender as trzgroupitem).Selected:=true;
+  for j:=0 to 3 do
+    if (sender as trzgroupitem)=rzgroup1.Items[j] then begin
+      for i:=0 to 1 do rzgroup2.Items[i].Selected:=false;
+    end;
+  for j:=0 to 1 do
+    if (sender as trzgroupitem)=rzgroup2.Items[j] then begin
+      for i:=0 to 3 do rzgroup1.Items[i].Selected:=false;
+    end;
+end;
+
+procedure TForm1.RzGroup1Items1Click(Sender: TObject);
+var j,i:integer;
+begin
+  panel1.Visible:=false;
+  panel2.Visible:=true;
+  panel3.Visible:=false;
+  panel4.Visible:=false;
+  panel5.Visible:=false;
+  panel6.Visible:=false;
+  (sender as trzgroupitem).Selected:=true;
+  for j:=0 to 3 do
+    if (sender as trzgroupitem)=rzgroup1.Items[j] then begin
+      for i:=0 to 1 do rzgroup2.Items[i].Selected:=false;
+    end;
+  for j:=0 to 1 do
+    if (sender as trzgroupitem)=rzgroup2.Items[j] then begin
+      for i:=0 to 3 do rzgroup1.Items[i].Selected:=false;
+    end;
+end;
+
+procedure TForm1.RzGroup1Items2Click(Sender: TObject);
+var j,i:integer;
+begin
+  panel1.Visible:=false;
+  panel2.Visible:=false;
+  panel3.Visible:=true;
+  panel4.Visible:=false;
+  panel5.Visible:=false;
+  panel6.Visible:=false;
+  (sender as trzgroupitem).Selected:=true;
+  for j:=0 to 3 do
+    if (sender as trzgroupitem)=rzgroup1.Items[j] then begin
+      for i:=0 to 1 do rzgroup2.Items[i].Selected:=false;
+    end;
+  for j:=0 to 1 do
+    if (sender as trzgroupitem)=rzgroup2.Items[j] then begin
+      for i:=0 to 3 do rzgroup1.Items[i].Selected:=false;
+    end;
+end;
+
+procedure TForm1.RzGroup1Items3Click(Sender: TObject);
+var j,i:integer;
+begin
+  panel1.Visible:=false;
+  panel2.Visible:=false;
+  panel3.Visible:=false;
+  panel4.Visible:=true;
+  panel5.Visible:=false;
+  panel6.Visible:=false;
+  (sender as trzgroupitem).Selected:=true;
+  for j:=0 to 3 do
+    if (sender as trzgroupitem)=rzgroup1.Items[j] then begin
+      for i:=0 to 1 do rzgroup2.Items[i].Selected:=false;
+    end;
+  for j:=0 to 1 do
+    if (sender as trzgroupitem)=rzgroup2.Items[j] then begin
+      for i:=0 to 3 do rzgroup1.Items[i].Selected:=false;
+    end;
+end;
+
+procedure TForm1.RzGroup2Items0Click(Sender: TObject);
+var j,i:integer;
+begin
+  panel1.Visible:=false;
+  panel2.Visible:=false;
+  panel3.Visible:=false;
+  panel4.Visible:=false;
+  panel5.Visible:=true;
+  panel6.Visible:=false;
+  (sender as trzgroupitem).Selected:=true;
+  for j:=0 to 3 do
+    if (sender as trzgroupitem)=rzgroup1.Items[j] then begin
+      for i:=0 to 1 do rzgroup2.Items[i].Selected:=false;
+    end;
+  for j:=0 to 1 do
+    if (sender as trzgroupitem)=rzgroup2.Items[j] then begin
+      for i:=0 to 3 do rzgroup1.Items[i].Selected:=false;
+    end;
+end;
+
+procedure TForm1.RzGroup2Items1Click(Sender: TObject);
+var j,i:integer;
+begin
+  panel1.Visible:=false;
+  panel2.Visible:=false;
+  panel3.Visible:=false;
+  panel4.Visible:=false;
+  panel5.Visible:=false;
+  panel6.Visible:=true;
+  (sender as trzgroupitem).Selected:=true;
+  for j:=0 to 3 do
+    if (sender as trzgroupitem)=rzgroup1.Items[j] then begin
+      for i:=0 to 1 do rzgroup2.Items[i].Selected:=false;
+    end;
+  for j:=0 to 1 do
+    if (sender as trzgroupitem)=rzgroup2.Items[j] then begin
+      for i:=0 to 3 do rzgroup1.Items[i].Selected:=false;
+    end;
+end;
 
 end.
